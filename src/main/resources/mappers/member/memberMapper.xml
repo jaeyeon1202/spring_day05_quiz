@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.root.mybatis.member.memberMapper">
+ 
+	<resultMap type="com.care.root.member.dto.memberDTO" id="loginCheck">
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+	</resultMap> 
+	
+	<resultMap type="com.care.root.member.dto.memberDTO" id="memberList">
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="addr" column="addr"/>
+	</resultMap>
+	
+	<resultMap type="com.care.root.member.dto.memberDTO" id="memberInfoView">
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="addr" column="addr"/>
+	</resultMap>
+ 
+ 	<select id="loginChk" resultMap="loginCheck">
+ 		select * from memberspring where id = #{id}
+ 	</select>
+ 	
+ 	<select id="list" resultMap="memberList">
+ 		select * from memberspring
+ 	</select>
+ 	
+ 	<select id="memberInfo" resultMap="memberInfoView">
+ 		select * from memberspring where id = #{id}
+ 	</select>
+ 	
+ 	<insert id="registerChk">
+ 		insert into memberspring values( #{id}, #{pw}, #{addr} )
+ 	</insert>
+ 	
+</mapper>
