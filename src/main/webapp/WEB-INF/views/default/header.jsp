@@ -11,14 +11,15 @@
 	<h1 align="center">CARE LAB</h1>
 	<hr>
 		<p align="right">
-			<a href="index">HOME</a>
-			<a href="list">회원 정보</a>
+			<a href="/root/member/index">HOME</a>
+			<a href="/root/member/list">회원 정보</a>
+			<a href="/root/board/boardList">게시판</a>
 			<c:choose>
 				<c:when test="${session != null }">
-					<a href="logout">로그아웃</a>
+					<a href="/root/member/logout">로그아웃</a>
 				</c:when>
 				<c:otherwise>
-					<a href="login">로그인</a>
+					<a href="/root/member/login">로그인</a>
 				</c:otherwise>
 			</c:choose>
 		</p>
